@@ -18,6 +18,11 @@ import sys
 import traceback
 from datetime import datetime
 from update_config_date import update_output_filename
+# Import the FFmpeg path setup function
+from ffmpeg_utils import setup_ffmpeg_path
+
+# Configure FFmpeg path early
+ffmpeg_path = setup_ffmpeg_path()
 
 # Configure logging
 logging.basicConfig(
@@ -41,7 +46,7 @@ WHISPER_SCRIPT_PATH = os.path.join(SCRIPT_DIR, 'local_whisper.py')
 PYTHON_EXECUTABLE = sys.executable
 
 # Interval in seconds (60 seconds = 1 minute)
-INTERVAL = 90
+INTERVAL = 3600
 
 def run_pipeline():
     """Run the complete pipeline: update config date, download files, transcribe audio"""

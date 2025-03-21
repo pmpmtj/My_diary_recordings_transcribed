@@ -65,5 +65,6 @@ $RECYCLE.BIN/
 credentials.json
 token.pickle
 
-model/my_model.pt
+ffmpeg.exe
+build*.*
 

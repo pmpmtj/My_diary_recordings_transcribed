@@ -20,6 +20,11 @@ import warnings
 import json
 from typing import List, Optional, Tuple, Union
 from datetime import datetime
+# Import the FFmpeg path setup function
+from ffmpeg_utils import setup_ffmpeg_path
+
+# Configure FFmpeg path early
+ffmpeg_path = setup_ffmpeg_path()
 
 import numpy as np
 import torch
@@ -33,6 +38,8 @@ try:
     from whisper.utils import (
         format_timestamp, optional_float, optional_int, str2bool, get_writer
     )
+    # You might need to set the FFmpeg path for whisper
+    whisper.audio.FFMPEG_PATH = ffmpeg_path
 except ImportError:
     print("Error: Whisper package not found. Please install it using pip.")
     sys.exit(1)
