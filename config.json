@@ -1,6 +1,6 @@
 {
   "downloads_directory": "./downloads",
-  "output_file": "250324_daily.txt",
+  "output_file": "250321_daily.txt",
   "processed_directory": "./processed_audio",
   "model": {
     "folder": "./model",

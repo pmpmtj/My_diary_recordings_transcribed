@@ -10,6 +10,8 @@ This script is a modified version of Whisper's CLI that:
 5. Appends all transcriptions to a single output file
 """
 
+import sys
+import io
 import argparse
 import os
 import sys
@@ -34,6 +36,8 @@ try:
 except ImportError:
     print("Error: Whisper package not found. Please install it using pip.")
     sys.exit(1)
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 def load_config(config_path="config.json"):
     """Load configuration from a JSON file."""
