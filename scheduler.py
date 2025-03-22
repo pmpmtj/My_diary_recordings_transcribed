@@ -64,7 +64,9 @@ def run_pipeline():
             [PYTHON_EXECUTABLE, DOWNLOAD_SCRIPT_PATH],
             check=True,
             capture_output=True,
-            text=True
+            text=True,
+            encoding='utf-8',  # Explicitly set encoding to utf-8
+            errors='replace'   # Replace characters that can't be decoded
         )
         logging.info(f"Download script output: {download_process.stdout}")
         if download_process.stderr:
@@ -81,7 +83,9 @@ def run_pipeline():
             [PYTHON_EXECUTABLE, WHISPER_SCRIPT_PATH],
             check=True,
             capture_output=True,
-            text=True
+            text=True,
+            encoding='utf-8',  # Explicitly set encoding to utf-8
+            errors='replace'   # Replace characters that can't be decoded
         )
         logging.info(f"Transcription script output: {whisper_process.stdout}")
         if whisper_process.stderr:
