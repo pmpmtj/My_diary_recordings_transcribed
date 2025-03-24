@@ -40,6 +40,7 @@ script/model/*.pt
 !README.md
 !INSTALL.md
 !requirements.txt
+!config.json
 
 # Editor-specific files
 .idea/
